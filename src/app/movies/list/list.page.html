@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>list</ion-title>
+    <ion-title>{{expression}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-button [routerLink]="['/']">
+    <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+  </ion-button>
+  <ion-list >
+      <app-item *ngFor="let movie of movies" [movie]="movie"></app-item>
+  </ion-list>
 </ion-content>

@@ -1,9 +1,9 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>item</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<ion-item [routerLink]="['/detail', movie.id]">
+    <ion-avatar slot="start">
+        <img src={{movie.image}} />
+    </ion-avatar>
+    <ion-label>
+        <h1>{{movie.title}}</h1>
+        <p>{{movie.description}}</p>
+    </ion-label>
+</ion-item>

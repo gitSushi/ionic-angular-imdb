@@ -1,9 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>detail</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div *ngIf="movie">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{movie.originalTitle}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
 
-<ion-content>
-
-</ion-content>
+    <ion-button [routerLink]="['/list']">
+      <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+    </ion-button>
+    <ion-card>
+      <img src={{movie.image}} />
+      <ion-card-header>
+        <ion-card-subtitle>by {{movie.directors}}</ion-card-subtitle>
+        <ion-card-title>{{movie.title}}</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>{{movie.plot}}</ion-card-content>
+    </ion-card>
+  </ion-content>
+</div>
