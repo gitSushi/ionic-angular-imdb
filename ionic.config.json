@@ -1,0 +1,7 @@
+{
+  "name": "vidz-cordova",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
