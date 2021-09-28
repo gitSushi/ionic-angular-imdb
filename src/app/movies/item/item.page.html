@@ -1,9 +1,19 @@
-<ion-item [routerLink]="['/detail', movie.id]">
+<!-- <ion-item [routerLink]="['/detail', movie.id]">
     <ion-avatar slot="start">
         <img src={{movie.image}} />
     </ion-avatar>
     <ion-label>
         <h1>{{movie.title}}</h1>
         <p>{{movie.description}}</p>
+    </ion-label>
+</ion-item> -->
+
+<ion-item [routerLink]="['/detail', movie.idx]">
+    <ion-avatar slot="start">
+        <img src={{movie.photo}} />
+    </ion-avatar>
+    <ion-label>
+        <h1>{{movie.titre}}</h1>
+        <p>{{movie.plot}}</p>
     </ion-label>
 </ion-item>

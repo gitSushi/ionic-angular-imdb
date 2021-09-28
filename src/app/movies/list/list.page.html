@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{expression}}</ion-title>
+    <!-- {{expression}} -->
+    <ion-title>your search</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,6 +10,6 @@
     <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
   </ion-button>
   <ion-list >
-      <app-item *ngFor="let movie of movies" [movie]="movie"></app-item>
+      <app-item *ngFor="let movie of movies" [movie]="movie | XitemX"></app-item>
   </ion-list>
 </ion-content>

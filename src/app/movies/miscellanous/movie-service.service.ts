@@ -20,6 +20,11 @@ export class MovieServiceService {
       .toPromise();
   }
 
+  getMovie$() {
+    return this.http
+      .get(this.URL + "SearchMovie/" + this.API_KEY + "/leon the professional");
+  }
+
   getMovie() {
     const routeParam = this.route.snapshot.paramMap;
     const movieId = routeParam.get("movieId");
