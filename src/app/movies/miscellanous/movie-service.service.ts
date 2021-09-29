@@ -44,10 +44,9 @@ export class MovieServiceService {
   /**
    * getMovie$ subject version
    * get movie list, pipe to have only the list as data then subscribes (first emit)
-   * @returns a subscription
    */
-  getMovie$(): Subscription {
-    return this.http
+  getMovie$() {
+    this.http
       .get<Iget>(this.URL + "SearchMovie/" + this.API_KEY + "/leon the professional")
       .pipe(map((data: Iget) => data.results))
       .subscribe((data: ImdbMovie[]) => this.subject$.next(data));

@@ -1,9 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { filmEnFrancais, ImdbMovie } from './interface';
+import { ImdbMovie } from './interface';
 
 @Pipe({
   name: 'XitemX'
 })
+
+/**
+ * Custom pipe to reformat object received to custom object
+ * See use in list.page.html
+ */
 export class ItemPipe implements PipeTransform {
 
   transform(n: ImdbMovie) {
