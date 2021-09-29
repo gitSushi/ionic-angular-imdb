@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { Observable, Subject, Subscription } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Iget, ImdbMovie, IMovieDetail } from './interface';
@@ -36,10 +36,10 @@ export class MovieServiceService {
    * getMovie$ observable version
    * @returns an observable (movie list)
    */
-  // getMovie$() {
-  //   return this.http
-  //     .get(this.URL + "SearchMovie/" + this.API_KEY + "/leon the professional");
-  // }
+  getObsMovie$() {
+    return this.http
+      .get(this.URL + "SearchMovie/" + this.API_KEY + "/leon the professional");
+  }
 
   /**
    * getMovie$ subject version
