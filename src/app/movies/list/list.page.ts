@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ImdbMovie, Iget, filmEnFrancais } from '../miscellanous/interface';
 import { MovieServiceService } from '../miscellanous/movie-service.service';
 
-import { map } from 'rxjs/operators';
+// import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list',
@@ -16,6 +17,8 @@ export class ListPage implements OnInit {
   movies: ImdbMovie[];
   // movies: filmEnFrancais[];
   expression: string;
+
+  subscriber: Subscription;
 
   constructor(private movieService: MovieServiceService) {
   }
@@ -44,7 +47,19 @@ export class ListPage implements OnInit {
     /**
      * observable -> custom pipe
      */
-    this.movieService.getMovie$().subscribe((data: Iget) => this.movies = data.results)
+    // this.subscriber = this.movieService.getMovie$()
+    //   .subscribe((data: Iget) => this.movies = data.results)
+
+
+    /**
+     * subject
+     */
+    this.movieService.getMovie$();
+    this.subscriber = this.movieService.getObservable()
+      .subscribe((data: ImdbMovie[]) => this.movies = data);
   }
 
+  ngOnDestroy() {
+    this.subscriber.unsubscribe();
+  }
 }
