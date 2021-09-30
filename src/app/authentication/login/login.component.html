@@ -1,3 +1,14 @@
-<p>
-  login works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      IMDB en mieux
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-button href="https://accounts.google.com/o/oauth2/v2/auth?client_id=1067581357565-fvqu8tbin3j2jhlfkp947o2gvtv4h51p.apps.googleusercontent.com&redirect_uri=http://localhost:8100/home&response_type=token&scope=https://www.googleapis.com/auth/userinfo.profile"> -->
+  <ion-button (click)="onLogin()">
+    <p>Login with google</p>
+  </ion-button>
+</ion-content>
